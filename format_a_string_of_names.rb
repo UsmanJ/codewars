@@ -10,7 +10,9 @@
 # list([])
 # # returns ''
 
-
-def list names
-  names.map { |hash| hash[:name] }.map { |i|  i.to_s }.join(", ")
+def list(names)
+ arr = names.map { |hash| hash[:name] }.map { |i|  i.to_s }
+ return "" if arr.empty?
+ return arr[0] if arr.length == 1
+ return arr[0..-2].join(', ') + " & " + arr[-1] if arr.length > 1
 end
